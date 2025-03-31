@@ -48,11 +48,11 @@ const Home = () => {
           </div>
         </div>
         <div className="home-hero-image">
-          <img
-            src="src/assets/hero-img.jpg"
+          {/* <img
+            src="public/hero-img.jpg"
             alt="Smart Sip Water Dispenser"
             className="home-hero-image-dispenser"
-          />
+          /> */}
           <div className="home-hero-image-overlay"></div>
         </div>
       </section>
