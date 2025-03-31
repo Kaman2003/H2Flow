@@ -18,10 +18,10 @@ const Home = () => {
         <div className="home-hero-content">
           <h1 className="home-hero-title">
             Welcome to{" "}
-            <span className="home-hero-title-highlight">H2</span>
+            <span className="home-hero-title-highlight">H2Flow</span>
           </h1>
           <p className="home-hero-subtitle">
-            Stay Hydrated, Stay Healthy with Our Smart Water Dispensers
+            Stay Hydrated, Stay Health with Our Smart Water Dispensers
           </p>
           <div className="home-hero-buttons">
             <button className="home-hero-button home-hero-button-secondary">
