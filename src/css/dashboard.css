@@ -1,0 +1,420 @@
+/* Dashboard Container */
+.dashboard-container {
+  padding: 2rem;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f7f8f9;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.dashboard-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 2px solid #dcdfe1;
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-message {
+  color: #95a5a6;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.notification-badge {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  cursor: pointer;
+  padding: 0.7rem;
+  transition: color 0.3s ease;
+}
+
+.notification-badge:hover {
+  color: #3498db;
+}
+
+.alert-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  border: 2px solid #f7f8f9;
+}
+
+/* Sensor Grid Layout */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sensor-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sensor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.sensor-card.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+      background-position: 200% 0;
+  }
+
+  100% {
+      background-position: -200% 0;
+  }
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #2c3e50;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.card-icon {
+  font-size: 1.4rem;
+  color: #3498db;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.status-badge.online,
+.status-badge.excellent,
+.status-badge.active,
+.status-badge.normal {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.status-badge.good {
+  background-color: #3498db;
+  color: white;
+}
+
+.status-badge.warning {
+  background-color: #f39c12;
+  color: white;
+}
+
+.status-badge.poor {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.status-badge.unknown,
+.status-badge.inactive,
+.status-badge.offline {
+  background-color: #95a5a6;
+  color: white;
+}
+
+/* Card Body Metrics */
+.card-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric span {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.4rem;
+}
+
+.metric strong {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+/* System Health Card */
+.system-health .health-metric {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.health-metric span {
+  flex: 1;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.health-metric strong {
+  font-size: 1rem;
+  margin-left: 0.7rem;
+  font-weight: 700;
+}
+
+.status-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.status-indicator.online {
+  background-color: #2ecc71;
+}
+
+.status-indicator.warning {
+  background-color: #f39c12;
+}
+
+.status-indicator.ok {
+  background-color: #bdc3c7;
+}
+
+/* Activity Log */
+.activity-log {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.log-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.log-entry {
+  display: flex;
+  padding: 1rem;
+  border-radius: 8px;
+  align-items: center;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.log-entry:hover {
+  background-color: #ecf0f1;
+}
+
+.log-entry.info {
+  border-left: 6px solid #3498db;
+}
+
+.log-entry.warning {
+  border-left: 6px solid #f39c12;
+}
+
+.log-entry.success {
+  border-left: 6px solid #2ecc71;
+}
+
+.entry-time {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  min-width: 90px;
+}
+
+.entry-event {
+  flex: 1;
+  font-size: 1rem;
+  padding: 0 1.2rem;
+}
+
+.entry-icon {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+.log-entry.info .entry-icon {
+  color: #3498db;
+}
+
+.log-entry.warning .entry-icon {
+  color: #f39c12;
+}
+
+.log-entry.success .entry-icon {
+  color: #2ecc71;
+}
+
+/* Consumption Chart */
+.consumption-chart {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-placeholder {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  color: #7f8c8d;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.color-swatch {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  margin-right: 0.7rem;
+}
+
+.color-swatch.today {
+  background-color: #3498db;
+}
+
+.color-swatch.average {
+  background-color: #bdc3c7;
+}
+
+/* System Metrics */
+.system-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 1.8rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.metric-icon {
+  font-size: 2.2rem;
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.6rem;
+}
+
+.metric-label {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-container {
+      padding: 1.5rem;
+  }
+
+  .sensor-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .system-metrics {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+  }
+
+  .system-metrics {
+      grid-template-columns: 1fr;
+  }
+}

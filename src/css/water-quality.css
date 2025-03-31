@@ -1,0 +1,1807 @@
+/* Mobile View (Default) */
+.hero-section {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 2rem 1rem;
+  text-align: center;
+  
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 svg {
+  margin-right: 0.5rem;
+  color: hsl(var(--secondary));
+}
+
+.hero-text p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-cta:hover {
+  background-color: hsl(var(--secondary), 0.8);
+  transform: translateY(-3px);
+}
+
+.hero-cta svg {
+  margin-left: 0.5rem;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-expanded {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.hero-expanded p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.hero-expanded ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hero-expanded ul li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* USGS Water Quality */
+.usgs-water-quality-section {
+  background-color: hsl(var(--primary-foreground));
+  color: hsl(var(--primary));
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.usgs-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.usgs-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.usgs-header h2 svg {
+  margin-right: 0.5rem;
+  color: hsl(var(--secondary));
+}
+
+.usgs-search {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.usgs-search input {
+  padding: 0.75rem;
+  border: 1px solid hsl(var(--primary), 0.3);
+  border-radius: 5px;
+  width: 70%;
+  font-size: 1rem;
+}
+
+.usgs-search button {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.usgs-search button:hover {
+  background-color: hsl(var(--secondary), 0.8);
+  transform: translateY(-2px);
+}
+
+.usgs-search button svg {
+  font-size: 1rem;
+}
+
+.usgs-loading,
+.usgs-error {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+.usgs-loading svg {
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.usgs-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.usgs-metric {
+  background-color: hsl(var(--primary-foreground));
+  color: hsl(var(--primary));
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.usgs-metric:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.usgs-metric h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: hsl(var(--secondary));
+}
+
+.usgs-metric p {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.usgs-metric p span {
+  font-weight: bold;
+  color: hsl(var(--primary), 0.8);
+}
+
+/* OpenAQ */
+.openaq-data-section {
+  background-color: hsl(var(--primary-foreground));
+  color: hsl(var(--primary));
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.openaq-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.openaq-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.openaq-header h2 svg {
+  margin-right: 0.5rem;
+  color: hsl(var(--secondary));
+}
+
+.openaq-search {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.openaq-search input {
+  padding: 0.75rem;
+  border: 1px solid hsl(var(--primary), 0.3);
+  border-radius: 5px;
+  width: 70%;
+  font-size: 1rem;
+}
+
+.openaq-search button {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.openaq-search button:hover {
+  background-color: hsl(var(--secondary), 0.8);
+  transform: translateY(-2px);
+}
+
+.openaq-search button svg {
+  font-size: 1rem;
+}
+
+.openaq-loading,
+.openaq-error {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+.openaq-loading svg {
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.openaq-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.openaq-metric {
+  background-color: hsl(var(--primary-foreground));
+  color: hsl(var(--primary));
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.openaq-metric:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.openaq-metric h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: hsl(var(--secondary));
+}
+
+.openaq-metric p {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.openaq-metric p span {
+  font-weight: bold;
+  color: hsl(var(--primary), 0.8);
+}
+
+.openaq-metric ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.openaq-metric ul li {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.openaq-metric ul li span {
+  font-weight: bold;
+  color: hsl(var(--primary), 0.8);
+}
+
+/* World Bank */
+.world-bank-data-section {
+  background-color: hsl(var(--primary-foreground));
+  color: hsl(var(--primary));
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.world-bank-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.world-bank-header h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.world-bank-header h2 svg {
+  margin-right: 0.5rem;
+  color: hsl(var(--secondary));
+}
+
+.world-bank-search {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.world-bank-search input {
+  padding: 0.75rem;
+  border: 1px solid hsl(var(--primary), 0.3);
+  border-radius: 5px;
+  width: 70%;
+  font-size: 1rem;
+}
+
+.world-bank-search button {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.world-bank-search button:hover {
+  background-color: hsl(var(--secondary), 0.8);
+  transform: translateY(-2px);
+}
+
+.world-bank-search button svg {
+  font-size: 1rem;
+}
+
+.world-bank-loading,
+.world-bank-error {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+.world-bank-loading svg {
+  margin-right: 0.5rem;
+  animation: spin 1s linear infinite;
+}
+
+.world-bank-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.world-bank-metric {
+  background-color: hsl(var(--primary-foreground));
+  color: hsl(var(--primary));
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.world-bank-metric:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.world-bank-metric h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: hsl(var(--secondary));
+}
+
+.world-bank-metric p {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.world-bank-metric p span {
+  font-weight: bold;
+  color: hsl(var(--primary), 0.8);
+}
+
+/* Calculator */
+.wuc-water-usage-calculator {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.wuc-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.wuc-title {
+  font-size: 2rem;
+  color: #006064;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.wuc-icon {
+  margin-right: 0.5rem;
+  color: #00838f;
+}
+
+.wuc-description {
+  font-size: 1rem;
+  color: #00838f;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.wuc-calculator-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wuc-input-wrapper {
+  position: relative;
+}
+
+.wuc-input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0097a7;
+}
+
+.wuc-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #4dd0e1;
+  border-radius: 25px;
+  font-size: 1rem;
+  color: #006064;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.wuc-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(77, 208, 225, 0.3);
+}
+
+.wuc-calculate-btn {
+  padding: 1rem 2rem;
+  background-color: #00acc1;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.wuc-calculate-btn:hover {
+  background-color: #00838f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wuc-calculation-result {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wuc-result-text {
+  font-size: 1.1rem;
+  color: #006064;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.wuc-result-animation {
+  height: 200px;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wuc-water-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4dd0e1;
+  transition: height 0.5s ease-out;
+}
+
+.wuc-result-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: #006064;
+  opacity: 0.5;
+}
+
+/* Containments */
+.cs-contaminants-section {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.cs-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cs-contaminants-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cs-contaminant {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cs-contaminant:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cs-contaminant-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cs-contaminant-icon {
+  font-size: 1.5rem;
+  color: #3498db;
+  margin-right: 1rem;
+}
+
+.cs-contaminant-name {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.cs-contaminant-description {
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 1rem;
+}
+
+.cs-contaminant-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.cs-contaminant-details.cs-show {
+  max-height: 500px;
+}
+
+.cs-details-title {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 1rem 0 0.5rem;
+}
+
+.cs-details-text {
+  font-size: 0.9rem;
+  color: #34495e;
+  margin: 0 0 1rem;
+}
+
+/* BENEFITS */
+.cwpb-container {
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  padding: 3rem 1rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.cwpb-clean-water-section,
+.cwpb-product-benefits-section {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cwpb-section-title {
+  font-size: 1.8rem;
+  color: #006064;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.cwpb-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #00acc1;
+  transition: width 0.3s ease;
+}
+
+.cwpb-section-title:hover::after {
+  width: 100px;
+}
+
+.cwpb-section-description {
+  font-size: 1rem;
+  color: #00838f;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.cwpb-points-list,
+.cwpb-benefits-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cwpb-point,
+.cwpb-benefit {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cwpb-point:hover,
+.cwpb-benefit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cwpb-point-active,
+.cwpb-benefit-active {
+  background-color: #e0f7fa;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cwpb-point-icon,
+.cwpb-benefit-icon {
+  font-size: 1.5rem;
+  color: #00acc1;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.cwpb-point:hover .cwpb-point-icon,
+.cwpb-benefit:hover .cwpb-benefit-icon {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.cwpb-point-text,
+.cwpb-benefit-text {
+  font-size: 1rem;
+  color: #006064;
+  flex-grow: 1;
+}
+
+.cwpb-point-details,
+.cwpb-benefit-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+  font-size: 0.9rem;
+  color: #00838f;
+  margin-top: 0.5rem;
+}
+
+.cwpb-details-visible {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Animated background */
+.cwpb-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 172, 193, 0.1) 0%,
+    rgba(224, 247, 250, 0) 70%
+  );
+  animation: cwpb-rotate 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes cwpb-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Water drop animation */
+.cwpb-clean-water-section::after,
+.cwpb-product-benefits-section::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%2300acc1" d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20Z" /></svg>');
+  background-size: contain;
+  opacity: 0.5;
+  animation: cwpb-water-drop 3s infinite ease-in-out;
+}
+
+@keyframes cwpb-water-drop {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+/* Tablet View (768px) */
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 3rem 2rem;
+  }
+
+  .hero-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    text-align: left;
+    max-width: 50%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .hero-image img {
+    max-width: 300px;
+  }
+
+  .hero-expanded {
+    margin-top: 2rem;
+  }
+
+  .hero-expanded p {
+    font-size: 1rem;
+  }
+
+  .hero-expanded ul li {
+    font-size: 1rem;
+  }
+
+  /* USG */
+  .usgs-water-quality-section {
+    padding: 3rem 2rem;
+  }
+
+  .usgs-header h2 {
+    font-size: 2rem;
+  }
+
+  .usgs-search input {
+    width: 60%;
+  }
+
+  .usgs-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .usgs-metric {
+    padding: 2rem;
+  }
+
+  .usgs-metric h3 {
+    font-size: 1.5rem;
+  }
+
+  .usgs-metric p {
+    font-size: 1.1rem;
+  }
+
+  /* OpenAQ */
+  .openaq-data-section {
+    padding: 3rem 2rem;
+  }
+
+  .openaq-header h2 {
+    font-size: 2rem;
+  }
+
+  .openaq-search input {
+    width: 60%;
+  }
+
+  .openaq-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .openaq-metric {
+    padding: 2rem;
+  }
+
+  .openaq-metric h3 {
+    font-size: 1.5rem;
+  }
+
+  .openaq-metric p {
+    font-size: 1.1rem;
+  }
+
+  .openaq-metric ul li {
+    font-size: 1rem;
+  }
+
+  /* World Bank */
+  .world-bank-data-section {
+    padding: 3rem 2rem;
+  }
+
+  .world-bank-header h2 {
+    font-size: 2rem;
+  }
+
+  .world-bank-search input {
+    width: 60%;
+  }
+
+  .world-bank-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .world-bank-metric {
+    padding: 2rem;
+  }
+
+  .world-bank-metric h3 {
+    font-size: 1.5rem;
+  }
+
+  .world-bank-metric p {
+    font-size: 1.1rem;
+  }
+
+  /* Calculator */
+  .water-usage-calculator-section {
+    padding: 3rem 2rem;
+  }
+
+  .calculator-header h2 {
+    font-size: 2rem;
+  }
+
+  .calculator-header p {
+    font-size: 1.1rem;
+  }
+
+  .calculator-input {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .calculator-input input {
+    width: 60%;
+  }
+
+  .calculator-input button {
+    padding: 0.75rem 2rem;
+  }
+
+  .calculation-result {
+    font-size: 1.2rem;
+  }
+
+  /* Calculator */
+  .wuc-water-usage-calculator {
+    padding: 3rem 2rem;
+  }
+
+  .wuc-title {
+    font-size: 2.5rem;
+  }
+
+  .wuc-description {
+    font-size: 1.2rem;
+  }
+
+  .wuc-calculator-input {
+    flex-direction: row;
+  }
+
+  .wuc-input-wrapper {
+    flex-grow: 1;
+  }
+
+  .wuc-calculate-btn {
+    align-self: stretch;
+  }
+
+  .wuc-result-animation {
+    height: 250px;
+  }
+
+  /* Containments */
+  .cs-contaminants-section {
+    padding: 3rem 2rem;
+  }
+
+  .cs-title {
+    font-size: 2.5rem;
+  }
+
+  .cs-contaminants-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* BENEFITS */
+  .cwpb-container {
+    padding: 4rem 2rem;
+  }
+
+  .cwpb-clean-water-section,
+  .cwpb-product-benefits-section {
+    padding: 3rem;
+  }
+
+  .cwpb-section-title {
+    font-size: 2.2rem;
+  }
+
+  .cwpb-section-description {
+    font-size: 1.1rem;
+  }
+
+  .cwpb-points-list,
+  .cwpb-benefits-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .cwpb-point,
+  .cwpb-benefit {
+    margin-bottom: 0;
+  }
+}
+
+/* Desktop View (1024px) */
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 4rem 3rem;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+
+  .hero-image img {
+    max-width: 400px;
+  }
+
+  .hero-expanded {
+    margin-top: 2.5rem;
+  }
+
+  .hero-expanded p {
+    font-size: 1.1rem;
+  }
+
+  .hero-expanded ul li {
+    font-size: 1.1rem;
+  }
+
+  /* USG */
+  .usgs-water-quality-section {
+    padding: 4rem 3rem;
+  }
+
+  .usgs-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .usgs-search input {
+    width: 50%;
+  }
+
+  .usgs-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .usgs-metric {
+    padding: 2.5rem;
+  }
+
+  .usgs-metric h3 {
+    font-size: 1.75rem;
+  }
+
+  .usgs-metric p {
+    font-size: 1.2rem;
+  }
+
+  /* OpenAQ */
+  .openaq-data-section {
+    padding: 4rem 3rem;
+  }
+
+  .openaq-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .openaq-search input {
+    width: 50%;
+  }
+
+  .openaq-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .openaq-metric {
+    padding: 2.5rem;
+  }
+
+  .openaq-metric h3 {
+    font-size: 1.75rem;
+  }
+
+  .openaq-metric p {
+    font-size: 1.2rem;
+  }
+
+  .openaq-metric ul li {
+    font-size: 1.1rem;
+  }
+
+  /* World Bank */
+  .world-bank-data-section {
+    padding: 4rem 3rem;
+  }
+
+  .world-bank-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .world-bank-search input {
+    width: 50%;
+  }
+
+  .world-bank-metrics {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .world-bank-metric {
+    padding: 2.5rem;
+  }
+
+  .world-bank-metric h3 {
+    font-size: 1.75rem;
+  }
+
+  .world-bank-metric p {
+    font-size: 1.2rem;
+  }
+
+  /* Calculator */
+  .water-usage-calculator-section {
+    padding: 4rem 3rem;
+  }
+
+  .calculator-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .calculator-header p {
+    font-size: 1.2rem;
+  }
+
+  .calculator-input input {
+    width: 50%;
+  }
+
+  .calculator-input button {
+    padding: 0.75rem 2.5rem;
+  }
+
+  .calculation-result {
+    font-size: 1.3rem;
+  }
+
+  /* Calculator */
+  .wuc-water-usage-calculator {
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+  }
+
+  .wuc-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1000px;
+  }
+
+  .wuc-title {
+    font-size: 3rem;
+    grid-column: 1 / -1;
+  }
+
+  .wuc-description {
+    grid-column: 1 / -1;
+  }
+
+  .wuc-calculator-input {
+    flex-direction: column;
+  }
+
+  .wuc-calculation-result {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .wuc-result-animation {
+    height: 300px;
+    flex-grow: 1;
+  }
+
+  .wuc-water-fill {
+    transition: height 1s ease-out;
+  }
+
+  .wuc-result-icon {
+    font-size: 4rem;
+  }
+
+  /* Containments */
+  .cs-contaminants-section {
+    padding: 4rem;
+  }
+
+  .cs-title {
+    font-size: 3rem;
+  }
+
+  .cs-contaminants-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cs-contaminant {
+    padding: 2rem;
+  }
+
+  .cs-contaminant-icon {
+    font-size: 2rem;
+  }
+
+  .cs-contaminant-name {
+    font-size: 1.5rem;
+  }
+
+  .cs-contaminant-description {
+    font-size: 1.1rem;
+  }
+
+  .cs-details-title {
+    font-size: 1.2rem;
+  }
+
+  .cs-details-text {
+    font-size: 1rem;
+  }
+
+  /* BENEFITS */
+  .cwpb-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5rem 3rem;
+  }
+
+  .cwpb-clean-water-section,
+  .cwpb-product-benefits-section {
+    flex-basis: 48%;
+    margin-bottom: 0;
+  }
+
+  .cwpb-section-title {
+    font-size: 2.5rem;
+  }
+
+  .cwpb-section-description {
+    font-size: 1.2rem;
+  }
+
+  .cwpb-points-list,
+  .cwpb-benefits-list {
+    grid-template-columns: 1fr;
+  }
+
+  .cwpb-point,
+  .cwpb-benefit {
+    padding: 1.5rem;
+  }
+
+  .cwpb-point-icon,
+  .cwpb-benefit-icon {
+    font-size: 2rem;
+  }
+
+  .cwpb-point-text,
+  .cwpb-benefit-text {
+    font-size: 1.1rem;
+  }
+
+  .cwpb-point-details,
+  .cwpb-benefit-details {
+    font-size: 1rem;
+  }
+}
+
+/* Interactive Elements */
+.wuc-input:hover,
+.wuc-calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wuc-input:focus,
+.wuc-calculate-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 172, 193, 0.3);
+}
+
+/* Immersive Background */
+.wuc-water-usage-calculator::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(77, 208, 225, 0.1) 0%,
+    rgba(224, 247, 250, 0) 70%
+  );
+  animation: rotate 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Addictive Elements */
+.wuc-water-fill {
+  position: relative;
+}
+
+.wuc-water-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: waterShine 2s linear infinite;
+}
+
+@keyframes waterShine {
+  0%,
+  100% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+}
+
+.wuc-result-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Containment */
+.cs-contaminant.cs-active {
+  background-color: rgba(255, 255, 255, 1);
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cs-contaminant-icon {
+  transition: transform 0.3s ease;
+}
+
+.cs-contaminant:hover .cs-contaminant-icon {
+  transform: rotate(15deg);
+}
+
+/* Immersive Background */
+.cs-contaminants-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(52, 152, 219, 0.1) 0%,
+    rgba(245, 247, 250, 0) 70%
+  );
+  animation: rotate 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Addictive Elements */
+@keyframes pulse-containment {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.cs-contaminant:not(.cs-active):hover {
+  animation: pulse-containment 1.5s infinite;
+}
+
+.cs-contaminant-details {
+  position: relative;
+}
+
+.cs-contaminant-details::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cs-contaminant-details.cs-show::after {
+  opacity: 1;
+}
+
+/* BENEFITS */
+.cwpb-point::before,
+.cwpb-benefit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 172, 193, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cwpb-point:hover::before,
+.cwpb-benefit:hover::before {
+  opacity: 1;
+}
+
+/* Pulse animation for icons */
+@keyframes cwpb-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cwpb-point-active .cwpb-point-icon,
+.cwpb-benefit-active .cwpb-benefit-icon {
+  animation: cwpb-pulse 1.5s infinite;
+}
+
+/* Staggered animation for list items */
+.cwpb-points-list li,
+.cwpb-benefits-list li {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cwpb-fade-in 0.5s ease forwards;
+}
+
+@keyframes cwpb-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cwpb-points-list li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.cwpb-points-list li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.cwpb-points-list li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.cwpb-benefits-list li:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.cwpb-benefits-list li:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.cwpb-benefits-list li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Shimmering effect for section titles */
+@keyframes cwpb-shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.cwpb-section-title {
+  background: linear-gradient(90deg, #006064, #00acc1, #006064);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: cwpb-shimmer 3s linear infinite;
+}
+
+/* 3D transform on hover for depth */
+.cwpb-clean-water-section:hover,
+.cwpb-product-benefits-section:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Floating animation for the entire container */
+@keyframes cwpb-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.cwpb-container {
+  animation: cwpb-float 6s ease-in-out infinite;
+}
+
+.cwpb-container {
+  scrollbar-width: thin;
+  scrollbar-color: #00acc1 #e0f7fa;
+}
+
+.cwpb-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cwpb-container::-webkit-scrollbar-track {
+  background: #e0f7fa;
+}
+
+.cwpb-container::-webkit-scrollbar-thumb {
+  background-color: #00acc1;
+  border-radius: 20px;
+  border: 2px solid #e0f7fa;
+}
+
+/* Ripple effect on click */
+.cwpb-point,
+.cwpb-benefit {
+  position: relative;
+  overflow: hidden;
+}
+
+.cwpb-point::after,
+.cwpb-benefit::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(0, 172, 193, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes cwpb-ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.cwpb-point:focus:not(:active)::after,
+.cwpb-benefit:focus:not(:active)::after {
+  animation: cwpb-ripple 1s ease-out;
+}
+
+/* Glowing effect for active items */
+.cwpb-point-active,
+.cwpb-benefit-active {
+  box-shadow: 0 0 15px rgba(0, 172, 193, 0.5);
+}
+
+/* Tilt effect on hover */
+.cwpb-point,
+.cwpb-benefit {
+  transition: transform 0.1s ease;
+}
+
+.cwpb-point:hover,
+.cwpb-benefit:hover {
+  transform: perspective(500px) rotateX(5deg) rotateY(5deg) scale(1.05);
+}
+
+/* Animated gradient border */
+.cwpb-clean-water-section,
+.cwpb-product-benefits-section {
+  position: relative;
+}
+
+.cwpb-clean-water-section::before,
+.cwpb-product-benefits-section::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #006064, #00acc1, #e0f7fa, #006064);
+  background-size: 400% 400%;
+  z-index: -1;
+  filter: blur(5px);
+  animation: cwpb-gradient-animation 15s ease infinite;
+}
+
+@keyframes cwpb-gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating icons */
+.cwpb-floating-icon {
+  position: absolute;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.cwpb-floating-icon:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  font-size: 2rem;
+  animation: cwpb-float-icon 8s infinite ease-in-out;
+}
+
+.cwpb-floating-icon:nth-child(2) {
+  top: 60%;
+  right: 5%;
+  font-size: 1.5rem;
+  animation: cwpb-float-icon 6s infinite ease-in-out reverse;
+}
+
+.cwpb-floating-icon:nth-child(3) {
+  bottom: 10%;
+  left: 50%;
+  font-size: 1.8rem;
+  animation: cwpb-float-icon 10s infinite ease-in-out;
+}
+
+@keyframes cwpb-float-icon {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+/* Accessibility improvements */
+.cwpb-point,
+.cwpb-benefit {
+  outline: none;
+}
+
+.cwpb-point:focus,
+.cwpb-benefit:focus {
+  box-shadow: 0 0 0 3px rgba(0, 172, 193, 0.5);
+}
+
+/* Print styles */
+@media print {
+  .cwpb-container {
+    background: none;
+    box-shadow: none;
+  }
+
+  .cwpb-clean-water-section,
+  .cwpb-product-benefits-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cwpb-point-details,
+  .cwpb-benefit-details {
+    max-height: none;
+    opacity: 1;
+  }
+}
