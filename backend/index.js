@@ -7,10 +7,16 @@ import bodyParser from 'body-parser';
 import authRoutes from './routes/auth.js';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import net from 'net';
+import rateLimit from 'express-rate-limit';
 
 // Environment Configuration
 dotenv.config();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const PORT = process.env.PORT || 3000;
+
+// 🚀 Express App Setup - Initialize FIRST
+const app = express();
 
 // 🔥 Firebase Admin Initialization (Secure Method)
 const initializeFirebase = () => {
@@ -33,9 +39,6 @@ const initializeFirebase = () => {
 
 initializeFirebase();
 
-// 🚀 Express App Setup
-const app = express();
-
 // 🔒 Enhanced Security Middleware
 app.use((req, res, next) => {
   res.setHeader('X-Powered-By', 'H2-Flow');
@@ -46,7 +49,7 @@ app.use((req, res, next) => {
 // 🌐 CORS Configuration (Dynamic Origins)
 const allowedOrigins = [
   ...process.env.ALLOWED_ORIGINS.split(','),
-  ...['http://localhost:3000', 'http://localhost:5173']
+  ...['http://localhost:3000', 'http://localhost:5173', "https://www.h2-flow.com/"]
 ];
 
 const corsOptions = {
@@ -70,8 +73,7 @@ app.options('*', cors(corsOptions));
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
-// 🛡️ Rate Limiting (Example)
-import rateLimit from 'express-rate-limit';
+// 🛡️ Rate Limiting
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // Limit each IP to 100 requests per window
@@ -110,18 +112,46 @@ app.use((err, req, res, next) => {
   });
 });
 
-// 🚀 Server Startup
-const PORT = process.env.PORT || 5003;
-const server = app.listen(PORT, () => {
-  console.log(`\n🚀 Server running in ${process.env.NODE_ENV || 'development'} mode`);
-  console.log(`📡 Listening on port ${PORT}`);
-  console.log(`🌐 Allowed Origins: ${allowedOrigins.join(', ')}\n`);
-});
+// Utility function to find available port
+const findAvailablePort = async (startPort) => {
+  for (let port = startPort; port < startPort + 100; port++) {
+    try {
+      await new Promise((resolve, reject) => {
+        const server = net.createServer();
+        server.listen(port, () => {
+          server.close(() => resolve(port));
+        });
+        server.on('error', () => reject());
+      });
+      return port;
+    } catch (err) {
+      continue;
+    }
+  }
+  throw new Error('No available ports');
+};
 
-// Handle unhandled promise rejections
-process.on('unhandledRejection', (err) => {
-  console.error('Unhandled Rejection:', err);
-  server.close(() => process.exit(1));
-});
+// 🚀 Server Startup (LAST)
+const startServer = async () => {
+  try {
+    const port = await findAvailablePort(PORT);
+    const server = app.listen(port, () => {
+      console.log(`\n🚀 Server running in ${process.env.NODE_ENV || 'development'} mode`);
+      console.log(`📡 Listening on port ${port}`);
+      console.log(`🌐 Allowed Origins: ${allowedOrigins.join(', ')}\n`);
+    });
+
+    // Handle unhandled promise rejections
+    process.on('unhandledRejection', (err) => {
+      console.error('Unhandled Rejection:', err);
+      server.close(() => process.exit(1));
+    });
+  } catch (err) {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  }
+};
+
+startServer();
 
 export { app };
