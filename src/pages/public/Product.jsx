@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Typography } from "@material-tailwind/react";
+// import { Typography } from "@material-tailwind/react";
+import { Button , Typography} from "@material-tailwind/react/components/Button";
 import "../../css/product.css";
 
 // Import images

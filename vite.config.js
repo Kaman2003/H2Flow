@@ -13,6 +13,7 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1000, // Set higher warning threshold (in kB)
     rollupOptions: {
+      external: ["@material-tailwind/react"],
       output: {
         manualChunks: {
           // Group React and related libraries
