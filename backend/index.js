@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 });
 
 // 🌐 CORS Configuration (Dynamic Origins)
-const allowedOrigins = [
+const allowedOrigins = [  
   ...process.env.ALLOWED_ORIGINS.split(','),
   ...['http://localhost:3000', 'http://localhost:5173', "https://www.h2-flow.com/"]
 ];

@@ -1,18 +1,20 @@
-const express = require("express");
-const admin = require("firebase-admin");
-const serverless = require("serverless-http");
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+const express = require('express');
+const cors = require('cors');
+
+// Initialize Firebase
+admin.initializeApp();
 
 const app = express();
-app.use(express.json());
+app.use(cors({ origin: true }));
 
-// Initialize Firebase Admin (use environment variables)
-admin.initializeApp({
-  credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)),
-  databaseURL: process.env.FIREBASE_DATABASE_URL,
-});
+// Import your routes
+const authRouter = require('../routes/auth');
+app.use('/auth', authRouter);
 
-// Your existing routes (auth.js)
-const authRouter = require("./backend/routes/auth");
-app.use("/api/auth", authRouter);
+// Export as Vercel serverless function
+module.exports = app;
 
-module.exports.handler = serverless(app);
+// Also export as Firebase function
+exports.api = functions.https.onRequest(app);

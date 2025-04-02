@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "firebase-admin": "^12.7.0",
-    "firebase-functions": "^6.0.1"
+    "firebase-functions": "^6.0.1",
+    "smart-sip": "file:.."
   }
 }

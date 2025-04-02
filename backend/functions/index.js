@@ -15,6 +15,7 @@ const firebaseConfig = {
     measurementId: "G-V7MQ9ZMS6L"
   };
 
+  const serviceAccount = require('./serviceAccountKey.json');
 // Firebase initialization with error handling
 let firebaseApp;
 try {
@@ -34,7 +35,8 @@ const app = express();
 app.use(cors({ 
   origin: [
     'https://h2-flow.com',
-    'https://www.h2-flow.com'
+    'https://www.h2-flow.com',
+    'http://localhost:3000'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -49,8 +51,13 @@ app.use('/api/auth', require('./routes/auth'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'healthy' });
+  res.json({ status: 'OK' });
 });
+
+app.use((req, res) => {
+  res.status(404).json({ error: 'Not Found' });
+});
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -86,3 +93,5 @@ if (process.env.NODE_ENV === 'development') {
   // Production - export as Firebase HTTP Function
   exports.api = functions.https.onRequest(app);
 }
+
+module.exports = app; 
