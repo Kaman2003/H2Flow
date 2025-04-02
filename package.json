@@ -5,10 +5,9 @@
     "type": "module",
     "scripts": {
       "dev": "vite",
-      "start" : "node server.js",
+      "start" : "vite preview",
       "build": "vite build",
       "lint": "eslint .",
-      "dev" : "nodemon server.js",
       "preview": "vite preview",
       "prebuild": "npm install --prefix functions", 
     "deploy-functions": "firebase deploy --only functions"
