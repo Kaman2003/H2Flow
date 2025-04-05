@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5003/api/auth";
+const API_URL = "http://localhost:5002/api/auth";
 
 const fetchWithAuth = async (url, options = {}) => {
   const response = await fetch(url, {

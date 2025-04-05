@@ -1,15 +1,18 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
+import { path } from './backend/function';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    visualizer({
-      open: true,
-      filename: 'bundle-stats.html'
-    })
-  ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5002',
+        changeOrigin: true,
+        secure: false
+      }
+    }
+  },
   build: {
     chunkSizeWarningLimit: 1000, // Set higher warning threshold (in kB)
     rollupOptions: {

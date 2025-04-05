@@ -18,7 +18,7 @@ import {
   faHistory
 } from "@fortawesome/free-solid-svg-icons";
 import { ref, onValue } from "firebase/database";
-import { database } from "../../firebase/config";
+import { database } from "../../firebase/firebase.config";
 import { useState, useEffect } from "react";
 
 function Dashboard() {
