@@ -55,24 +55,25 @@ res.header('Access-Control-Allow-Origin', clientUrl);
 
 // CORS Configuration
 const allowedOrigins = [
-  'https:www.h2-flow.com',
-  'https:h2-flow.com',
-  'http://localhost:3000', 
-  'http://localhost:5173',
-  'https://h2-flow.netlify.app'
+  'https://www.h2-flow.com',
+  'https://h2-flow.com',
+  'https://h2-flow.netlify.app',
+  'http://localhost:3000'
 ];
 
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      console.warn(`⚠️ Blocked by CORS: ${origin}`);
-      callback(new Error('Not allowed by CORS'));
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.some(allowed => {
+      return origin === allowed || 
+             origin.includes(allowed.replace('https://', '').replace('http://', ''));
+    })) {
+      return callback(null, true);
     }
+    
+    callback(new Error('Not allowed by CORS'));
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 

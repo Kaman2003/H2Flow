@@ -5,6 +5,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig(({ mode }) => {
   // Load environment variables based on mode
   const env = loadEnv(mode, process.cwd(), '');
+  
 
   return {
     server: {
@@ -17,6 +18,7 @@ export default defineConfig(({ mode }) => {
         }
       }
     },
+    base: '/',
   build: {
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
@@ -41,6 +43,12 @@ export default defineConfig(({ mode }) => {
       'react-dom',
       'react-router-dom'
     ]
+  },
+  plugins: [react()],
+  define: {
+    'process.env': process.env
   }
 }
+
+
 });
