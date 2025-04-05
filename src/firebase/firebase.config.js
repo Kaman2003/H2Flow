@@ -16,7 +16,7 @@ export const auth = getAuth(app);
 const database = getDatabase(app);
 
 // Export all three
-export { app, auth, database };
+export { app,database };
 
 
 
