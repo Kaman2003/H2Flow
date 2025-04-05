@@ -1,6 +1,5 @@
 // Use either CommonJS (recommended for Firebase) or ES Modules, not both
 // CommonJS version (recommended):
-
 const dotenv = require('dotenv');
 const admin = require('firebase-admin');
 const functions = require('firebase-functions');
@@ -46,7 +45,8 @@ const initializeFirebase = () => {
 
 // Enhanced Security Middleware
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', import.meta.env.VITE_CLIENT_URL || 'http://localhost:3000');
+  const clientUrl = process.env.VITE_CLIENT_URL || 'http://localhost:3000';
+res.header('Access-Control-Allow-Origin', clientUrl);
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.header('Access-Control-Allow-Credentials', 'true');
@@ -58,7 +58,8 @@ const allowedOrigins = [
   'https:www.h2-flow.com',
   'https:h2-flow.com',
   'http://localhost:3000', 
-  'http://localhost:5173'
+  'http://localhost:5173',
+  'https://h2-flow.netlify.app'
 ];
 
 app.use(cors({
