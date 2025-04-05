@@ -1,6 +1,0 @@
-[build]
-  command = "npm install && npm run build"
-  publish = "."
-
-[deploy]
-  start_command = "npm start"
