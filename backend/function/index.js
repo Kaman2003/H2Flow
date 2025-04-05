@@ -46,8 +46,10 @@ const initializeFirebase = () => {
 
 // Enhanced Security Middleware
 app.use((req, res, next) => {
-  res.setHeader('X-Powered-By', 'H2-Flow');
-  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  res.header('Access-Control-Allow-Origin', import.meta.env.VITE_CLIENT_URL || 'http://localhost:3000');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Credentials', 'true');
   next();
 });
 

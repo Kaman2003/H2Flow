@@ -1,6 +1,6 @@
 {"functions": {
-    "source": "backend/functionk",
-    "codebase": "functionk",
+    "source": "backend/function",
+    "codebase": "function",
      "predeploy": []
 },
 

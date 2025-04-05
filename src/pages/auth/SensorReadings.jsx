@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWater, faRulerVertical, faWind } from "@fortawesome/free-solid-svg-icons";
 import { ref, onValue } from "firebase/database";
 import "../../css/sensorreading.css"
