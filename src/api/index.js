@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5002/api/auth";
+const API_URL = "https://us-central1-h2flow-4ab96.cloudfunctions.net/api";
 
 const fetchWithAuth = async (url, options = {}) => {
   const response = await fetch(url, {

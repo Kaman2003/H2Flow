@@ -1,6 +1,7 @@
 {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
+  "type": "commonjs",
   "scripts": {
     "lint": "eslint . --quiet || exit 0",
     "serve": "firebase emulators:start --only functions",
@@ -16,11 +17,14 @@
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "firebase-admin": "^12.6.0",
-    "firebase-functions": "^6.0.1"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^6.3.2"
   },
   "devDependencies": {
+    "@types/node": "^22.14.0",
     "eslint": "^9.24.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-node": "^11.1.0",

@@ -1,8 +1,8 @@
 {"functions": {
     "source": "backend/functionk",
     "codebase": "functionk",
-    "predeploy": []
-  },
+     "predeploy": []
+},
 
     "hosting": {
       "public": "dist",

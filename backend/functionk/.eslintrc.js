@@ -20,7 +20,8 @@ module.exports = {
   rules: {
     "quotes": ["error", "double"],
     "no-undef": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+     "max-len": "off"
   },
   globals: {
     "process": "readonly",

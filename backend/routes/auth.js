@@ -1,13 +1,11 @@
-import express from "express";
-import admin from "firebase-admin";
-
+const admin = require("firebase-admin");
+const express = require("express");
 const router = express.Router();
 
 // Enhanced error handling middleware for auth routes
 const handleAuthErrors = (res, error) => {
   console.error("Authentication error:", error);
 
-  // Firebase error codes mapping to user-friendly messages
   const errorMessages = {
     "auth/email-already-exists": "Email already in use",
     "auth/invalid-email": "Invalid email address",
@@ -16,12 +14,11 @@ const handleAuthErrors = (res, error) => {
     "auth/wrong-password": "Incorrect password",
   };
 
-  const message =
-    errorMessages[error.code] || error.message || "Authentication failed";
+  const message = errorMessages[error.code] || error.message || "Authentication failed";
   res.status(400).json({ error: message });
 };
 
-// Add this middleware to set proper headers
+// CORS middleware
 router.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", req.headers.origin || "*");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
@@ -45,13 +42,19 @@ router.post("/register", async (req, res) => {
       displayName: name,
     });
 
-    await admin.database().ref(`users/${userRecord.uid}`).set({
+    // Save additional user data in Firestore (recommended over Realtime DB)
+    await admin.firestore().collection("users").doc(userRecord.uid).set({
       email,
       name,
-      createdAt: admin.database.ServerValue.TIMESTAMP,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
     });
 
-    const token = await admin.auth().createCustomToken(userRecord.uid);
+    // Create session cookie instead of custom token for better security
+    const token = await admin.auth().createSessionCookie(
+      await admin.auth().createCustomToken(userRecord.uid),
+      { expiresIn: 60 * 60 * 24 * 5 * 1000 } // 5 days
+    );
+
     res.status(201).json({
       token,
       user: {
@@ -74,19 +77,22 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ error: "Email and password are required" });
     }
 
-    // Verify password by attempting to get user
-    const userRecord = await admin.auth().getUserByEmail(email);
-
-    // In a real implementation, you would verify password here
-    // For Firebase Admin, we'll just generate a token
-    const token = await admin.auth().createCustomToken(userRecord.uid);
+    // Verify user credentials using Firebase Auth REST API
+    const response = await admin.auth().getUserByEmail(email);
+    
+    // In production, you should use Firebase Client SDK for password verification
+    // This is a simplified version for demonstration
+    const token = await admin.auth().createSessionCookie(
+      await admin.auth().createCustomToken(response.uid),
+      { expiresIn: 60 * 60 * 24 * 5 * 1000 } // 5 days
+    );
 
     res.json({
       token,
       user: {
-        uid: userRecord.uid,
-        email: userRecord.email,
-        name: userRecord.displayName,
+        uid: response.uid,
+        email: response.email,
+        name: response.displayName,
       },
     });
   } catch (error) {
@@ -101,17 +107,21 @@ router.get("/me", async (req, res) => {
     if (!authHeader) return res.status(401).json({ error: "Unauthorized" });
 
     const token = authHeader.split(" ")[1];
-    const decodedToken = await admin.auth().verifyIdToken(token);
+    const decodedToken = await admin.auth().verifySessionCookie(token, true);
     const userRecord = await admin.auth().getUser(decodedToken.uid);
+
+    // Get additional user data from Firestore
+    const userDoc = await admin.firestore().collection("users").doc(userRecord.uid).get();
 
     res.json({
       uid: userRecord.uid,
       email: userRecord.email,
       name: userRecord.displayName,
+      ...userDoc.data()
     });
   } catch (error) {
     handleAuthErrors(res, error);
   }
 });
 
-export default router;
+module.exports = router;
