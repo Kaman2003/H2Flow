@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  functions = "functions"  # If using Netlify Functions
+  functionsDirectory = "backend/functions"  # If using Netlify Functions
 
 [build.environment]
   NODE_VERSION = "18"
