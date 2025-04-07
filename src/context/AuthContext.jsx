@@ -71,8 +71,10 @@ export function AuthProvider({ children }) {
           // Fetch additional user data
           const userData = await getCurrentUser(token);
           setCurrentUser({
-            ...user,
+            uid: user.uid,
+            email: user.email,
             name: userData.name,
+            token
           });
         } catch (error) {
           console.error("Auth state error:", error);
